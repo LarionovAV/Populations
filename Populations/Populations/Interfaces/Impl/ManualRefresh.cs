@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Populations
+﻿namespace Populations
 {
-    class ManualRefresh
+    class ManualRefresh : IRefreshStrategy
     {
+        public void Refresh()
+        {
+            Counter.GetInstance().Recount();
+        }
+
+        public void Stop()
+        {
+            
+        }
     }
 }

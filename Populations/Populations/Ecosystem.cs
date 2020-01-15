@@ -1,19 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Populations
 {
     class Ecosystem
     {
-        private List<Species> Species { get; set; }
-        private double[,] Relations { get; set; }
-        private Ecosystem instance = null;
+        public List<Species>            Species     { get; private set; }
+        private static Ecosystem        instance    = null;
 
-        private Ecosystem(){
-            Init();
+        //Конструктор
+        private Ecosystem(List<Species> spec)
+        {
+            if (spec != null) {
+                Species = spec;
+            }
+            else 
+                Species = new List<Species>();
         }
+        private bool HasSpecies(string spName) {
+            bool res = false;
+            foreach (Species sp in Species) {
+                if (sp.Name == spName) {
+                    res = true;
+                    break;
+                }
+            }
+            return res;
+        }
+
+        public static Ecosystem GetInstance(List<Species> spec = null) {
+            if (instance == null)
+                instance = new Ecosystem(spec);
+
+            return instance;
+        }
+        public void AddSpecies(Species sp) {
+            if (!HasSpecies(sp.Name)) {
+                Species.Add(sp);
+                foreach (Species spec in Species) {
+                    spec.Relations.Add(0);
+                }
+            }
+        }
+
     }
 }

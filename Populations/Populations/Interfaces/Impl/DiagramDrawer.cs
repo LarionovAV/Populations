@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Populations.Interfaces.Impl;
 
 namespace Populations
 {
-    class DiagramDrawer
+    class DiagramDrawer : ChartDrawer
     {
+        public override void Draw()
+        {
+            
+        }
     }
 }
