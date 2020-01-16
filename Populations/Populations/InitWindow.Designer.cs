@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InitTable = new System.Windows.Forms.DataGridView();
             this.SpecName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,18 +57,18 @@
             this.Death});
             this.InitTable.Dock = System.Windows.Forms.DockStyle.Top;
             this.InitTable.Location = new System.Drawing.Point(0, 0);
+            this.InitTable.Margin = new System.Windows.Forms.Padding(4);
             this.InitTable.MultiSelect = false;
             this.InitTable.Name = "InitTable";
-            this.InitTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InitTable.Size = new System.Drawing.Size(716, 150);
+            this.InitTable.Size = new System.Drawing.Size(955, 185);
             this.InitTable.TabIndex = 0;
             this.InitTable.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.InitTable_UserDeletingRow);
             // 
             // SpecName
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = null;
-            this.SpecName.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = null;
+            this.SpecName.DefaultCellStyle = dataGridViewCellStyle1;
             this.SpecName.Frozen = true;
             this.SpecName.HeaderText = "Название вида";
             this.SpecName.Name = "SpecName";
@@ -76,9 +76,9 @@
             // 
             // Count
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "N0";
-            this.Count.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N0";
+            this.Count.DefaultCellStyle = dataGridViewCellStyle2;
             this.Count.Frozen = true;
             this.Count.HeaderText = "Численность";
             this.Count.Name = "Count";
@@ -86,9 +86,9 @@
             // 
             // MaxCount
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "N0";
-            this.MaxCount.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "N0";
+            this.MaxCount.DefaultCellStyle = dataGridViewCellStyle3;
             this.MaxCount.Frozen = true;
             this.MaxCount.HeaderText = "Максимальная численность";
             this.MaxCount.Name = "MaxCount";
@@ -96,9 +96,9 @@
             // 
             // Birth
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Format = "N0";
-            this.Birth.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N0";
+            this.Birth.DefaultCellStyle = dataGridViewCellStyle4;
             this.Birth.Frozen = true;
             this.Birth.HeaderText = "Рождаемость";
             this.Birth.Name = "Birth";
@@ -106,9 +106,9 @@
             // 
             // Death
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Format = "N0";
-            this.Death.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "N0";
+            this.Death.DefaultCellStyle = dataGridViewCellStyle5;
             this.Death.Frozen = true;
             this.Death.HeaderText = "Смертность";
             this.Death.Name = "Death";
@@ -118,9 +118,10 @@
             // AcceptBtn
             // 
             this.AcceptBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AcceptBtn.Location = new System.Drawing.Point(468, 189);
+            this.AcceptBtn.Location = new System.Drawing.Point(624, 233);
+            this.AcceptBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AcceptBtn.Name = "AcceptBtn";
-            this.AcceptBtn.Size = new System.Drawing.Size(115, 39);
+            this.AcceptBtn.Size = new System.Drawing.Size(153, 48);
             this.AcceptBtn.TabIndex = 1;
             this.AcceptBtn.Text = "Принять";
             this.AcceptBtn.UseVisualStyleBackColor = true;
@@ -129,9 +130,10 @@
             // CancelBtn
             // 
             this.CancelBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelBtn.Location = new System.Drawing.Point(589, 189);
+            this.CancelBtn.Location = new System.Drawing.Point(785, 233);
+            this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CancelBtn.Name = "CancelBtn";
-            this.CancelBtn.Size = new System.Drawing.Size(115, 39);
+            this.CancelBtn.Size = new System.Drawing.Size(153, 48);
             this.CancelBtn.TabIndex = 1;
             this.CancelBtn.Text = "Отмена";
             this.CancelBtn.UseVisualStyleBackColor = true;
@@ -140,9 +142,10 @@
             // AddRowBtn
             // 
             this.AddRowBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddRowBtn.Location = new System.Drawing.Point(12, 189);
+            this.AddRowBtn.Location = new System.Drawing.Point(16, 233);
+            this.AddRowBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddRowBtn.Name = "AddRowBtn";
-            this.AddRowBtn.Size = new System.Drawing.Size(151, 39);
+            this.AddRowBtn.Size = new System.Drawing.Size(201, 48);
             this.AddRowBtn.TabIndex = 1;
             this.AddRowBtn.Text = "Добавить запись";
             this.AddRowBtn.UseVisualStyleBackColor = true;
@@ -150,13 +153,14 @@
             // 
             // InitWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 240);
+            this.ClientSize = new System.Drawing.Size(955, 295);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.AddRowBtn);
             this.Controls.Add(this.AcceptBtn);
             this.Controls.Add(this.InitTable);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InitWindow";
             this.Text = "Инициализация видов";
             this.Load += new System.EventHandler(this.InitWindow_Load);

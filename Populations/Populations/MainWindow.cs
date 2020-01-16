@@ -15,6 +15,9 @@ namespace Populations
         public MainWindow()
         {
             InitializeComponent();
+            DrawSystem.GetInstance().Drawers.Add(new GraficDrawer(GraficChart));
+            DrawSystem.GetInstance().Drawers.Add(new HystogramDrawer(HystoChart));
+            DrawSystem.GetInstance().Drawers.Add(new DiagramDrawer(CircleChart));
         }
 
 
@@ -40,6 +43,9 @@ namespace Populations
             InitBtn.Location = new Point((InitBtn.Parent.Width - InitBtn.Width) / 2, 10);
             StartRefreshBtn.Location = new Point((StartRefreshBtn.Parent.Width - StartRefreshBtn.Width) / 2, InitBtn.Height + InitBtn.Location.Y + 20);
             StopRefreshBtn.Location = new Point((StopRefreshBtn.Parent.Width - StopRefreshBtn.Width) / 2, StartRefreshBtn.Height + StartRefreshBtn.Location.Y + 20);
+            SettingsBtn.Location = new Point((SettingsBtn.Parent.Width - SettingsBtn.Width) / 2, StopRefreshBtn.Height + StopRefreshBtn.Location.Y + 20);
+            TakeSnapshotBtn.Location = new Point((TakeSnapshotBtn.Parent.Width - TakeSnapshotBtn.Width) / 2, SettingsBtn.Height + SettingsBtn.Location.Y + 20);
+            RestoreBtm.Location = new Point((RestoreBtm.Parent.Width - RestoreBtm.Width) / 2, TakeSnapshotBtn.Height + TakeSnapshotBtn.Location.Y + 20);
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -51,8 +57,32 @@ namespace Populations
 
         private void InitBtn_Click(object sender, EventArgs e)
         {
-            InitWindow iw = new InitWindow();
-            iw.ShowDialog();
+            Facade.Init();
+        }
+
+        private void SettingsBtn_Click(object sender, EventArgs e)
+        {
+            Facade.ChangeSettings();
+        }
+
+        private void StartRefreshBtn_Click(object sender, EventArgs e)
+        {
+            Facade.Execute();
+        }
+
+        private void StopRefreshBtn_Click(object sender, EventArgs e)
+        {
+            Facade.Stop();
+        }
+
+        private void TakeSnapshotBtn_Click(object sender, EventArgs e)
+        {
+            Facade.TakeSnapshot();
+        }
+
+        private void RestoreBtm_Click(object sender, EventArgs e)
+        {
+            Facade.Restore();
         }
     }
 }

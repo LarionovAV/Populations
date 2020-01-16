@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Populations
 {
-    class AutomaticRefresh
+    class AutomaticRefresh : IRefreshStrategy
     {
+        public void Refresh()
+        {
+            
+        }
+
+        public void Stop()
+        {
+            
+        }
     }
 }

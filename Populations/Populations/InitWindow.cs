@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Populations
@@ -14,6 +15,7 @@ namespace Populations
         {
             foreach (DataGridViewRow row in InitTable.Rows) {
                 if (row.Cells["SpecName"].Value.ToString() != "")
+                {
                     Ecosystem.GetInstance().AddSpecies(
                         new Species(
                             row.Cells["SpecName"].Value.ToString(),
@@ -22,11 +24,14 @@ namespace Populations
                             int.Parse(row.Cells["Death"].Value.ToString()),
                             int.Parse(row.Cells["MaxCount"].Value.ToString()))
                         );
+                }
             }
-
+            
             InitWindow2 iw2 = new InitWindow2();
             iw2.ShowDialog();
             Close();
+
+            DrawSystem.GetInstance().Update();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -49,11 +54,7 @@ namespace Populations
         private void InitTable_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             int index = InitTable.SelectedRows[0].Index;
-            foreach (Species sp in Ecosystem.GetInstance().Species)
-            {
-                sp.Relations.RemoveAt(index);
-            }
-            Ecosystem.GetInstance().Species.RemoveAt(index);
+            Ecosystem.GetInstance().RemoveSpecies(index);
         }
     }
 }

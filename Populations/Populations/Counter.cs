@@ -1,4 +1,6 @@
-﻿namespace Populations
+﻿using System;
+
+namespace Populations
 {
     class Counter
     {
@@ -26,6 +28,9 @@
 
         public void Recount() {
             math.Recount();
+        }
+        public Type GetMathModel() {
+            return math.GetType();
         }
     }
 }

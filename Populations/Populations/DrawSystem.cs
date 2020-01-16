@@ -1,18 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Populations
 {
     class DrawSystem
     {
-        private List<IDrawer>       drawers;
+        public const int MAX_X_VALUE = 100;
+
+        public List<IDrawer>        Drawers { get; set; }
+        
         private static DrawSystem   instance = null;
 
+
         private DrawSystem() {
-            drawers = new List<IDrawer>();
+            Drawers = new List<IDrawer>();
         }
 
         public void DoDraw() {
-            foreach (IDrawer drawer in drawers) {
+            foreach (IDrawer drawer in Drawers) {
                 drawer.Draw();
             }
         }
@@ -22,5 +27,10 @@ namespace Populations
 
             return instance;
         }
+        public void Update() {
+            foreach (IDrawer drawer in Drawers)
+                drawer.Update();
+        }
+        
     }
 }

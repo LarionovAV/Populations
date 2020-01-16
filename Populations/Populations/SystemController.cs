@@ -20,6 +20,8 @@ namespace Populations
 
         public void ExecuteRefresh() {
             refreshMode.Refresh();
+            History.GetInstance().RenewData();
+            DrawSystem.GetInstance().Update();
         }
         public void StopRefresh()
         {
@@ -30,6 +32,12 @@ namespace Populations
                 instance = new SystemController(refreshStrategy);
 
             return instance;
+        }
+        public Type GetRefreshMode() {
+            return refreshMode.GetType();
+        }
+        public void ChangeRefreshStrategy(IRefreshStrategy newStrategy) {
+            refreshMode = newStrategy;
         }
     }
 }

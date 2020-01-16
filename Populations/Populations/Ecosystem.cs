@@ -39,8 +39,16 @@ namespace Populations
                 foreach (Species spec in Species) {
                     spec.Relations.Add(0);
                 }
+                History.GetInstance().AddDataSource(new List<int>());
             }
         }
-
+        public void RemoveSpecies(int index) {
+            foreach (Species sp in Species)
+            {
+                sp.Relations.RemoveAt(index);
+            }
+            Species.RemoveAt(index);
+            History.GetInstance().Data.RemoveAt(index);
+        }
     }
 }

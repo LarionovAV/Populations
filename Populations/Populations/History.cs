@@ -5,11 +5,13 @@ namespace Populations
 {
     class History
     {
+        public List<List<int>>          Data { get; }
         private Stack<EcoSnapshot>      snapshots;
         private static History          instance = null;
 
         private History() {
             snapshots = new Stack<EcoSnapshot>();
+            Data = new List<List<int>>();
         }
 
         public void Push(EcoSnapshot snapshot) {
@@ -32,6 +34,23 @@ namespace Populations
                 instance = new History();
 
             return instance;
+        }
+
+        public void AddDataSource(List<int> source)
+        {
+            Data.Add(source);
+        }
+
+        public void RenewData()
+        {
+            int i = 0;
+            foreach (List<int> DataSource in Data)
+            {
+                DataSource.Add(Ecosystem.GetInstance().Species[i].Population);
+                if (DataSource.Count > DrawSystem.MAX_X_VALUE)
+                    DataSource.RemoveAt(0);
+                i++;
+            }
         }
     }
 }

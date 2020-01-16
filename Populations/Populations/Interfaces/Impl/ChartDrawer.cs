@@ -10,5 +10,7 @@ namespace Populations.Interfaces.Impl
         {
             MessageBox.Show("Функция вывода графика не определена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public virtual void Update() { }
     }
 }
