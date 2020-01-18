@@ -9,9 +9,13 @@
             EcoSnapshot last = History.GetInstance().Pop();
 
             if (last != null) {
+                History.GetInstance().ClearData();
                 Ecosystem.GetInstance().Species.Clear();
+                int i = 0;
                 foreach (Species sp in last.Spec) {
-                    Ecosystem.GetInstance().Species.Add(sp);
+                    Ecosystem.GetInstance().AddSpecies(sp);
+                    History.GetInstance().Data[i].Add(sp.Population);
+                    i++;
                 }
             }
         }

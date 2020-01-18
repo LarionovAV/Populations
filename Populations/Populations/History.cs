@@ -52,5 +52,13 @@ namespace Populations
                 i++;
             }
         }
+
+        public void ClearData() {
+            Data.Clear();
+        }
+
+        public int GetSnapshotCount() {
+            return snapshots.Count;
+        }
     }
 }

@@ -34,14 +34,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InitTable = new System.Windows.Forms.DataGridView();
-            this.SpecName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaxCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Death = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AcceptBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
             this.AddRowBtn = new System.Windows.Forms.Button();
+            this.SpecName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EcoCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Death = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.InitTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.InitTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SpecName,
             this.Count,
-            this.MaxCount,
+            this.EcoCapacity,
             this.Birth,
             this.Death});
             this.InitTable.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,59 +64,9 @@
             this.InitTable.TabIndex = 0;
             this.InitTable.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.InitTable_UserDeletingRow);
             // 
-            // SpecName
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = null;
-            this.SpecName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.SpecName.Frozen = true;
-            this.SpecName.HeaderText = "Название вида";
-            this.SpecName.Name = "SpecName";
-            this.SpecName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Count
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N0";
-            this.Count.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Count.Frozen = true;
-            this.Count.HeaderText = "Численность";
-            this.Count.Name = "Count";
-            this.Count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // MaxCount
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "N0";
-            this.MaxCount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.MaxCount.Frozen = true;
-            this.MaxCount.HeaderText = "Максимальная численность";
-            this.MaxCount.Name = "MaxCount";
-            this.MaxCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Birth
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N0";
-            this.Birth.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Birth.Frozen = true;
-            this.Birth.HeaderText = "Рождаемость";
-            this.Birth.Name = "Birth";
-            this.Birth.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Death
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "N0";
-            this.Death.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Death.Frozen = true;
-            this.Death.HeaderText = "Смертность";
-            this.Death.Name = "Death";
-            this.Death.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Death.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // AcceptBtn
             // 
+            this.AcceptBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.AcceptBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AcceptBtn.Location = new System.Drawing.Point(624, 233);
             this.AcceptBtn.Margin = new System.Windows.Forms.Padding(4);
@@ -129,6 +79,7 @@
             // 
             // CancelBtn
             // 
+            this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CancelBtn.Location = new System.Drawing.Point(785, 233);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(4);
@@ -150,6 +101,57 @@
             this.AddRowBtn.Text = "Добавить запись";
             this.AddRowBtn.UseVisualStyleBackColor = true;
             this.AddRowBtn.Click += new System.EventHandler(this.AddRowBtn_Click);
+            // 
+            // SpecName
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = null;
+            this.SpecName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SpecName.Frozen = true;
+            this.SpecName.HeaderText = "Название вида";
+            this.SpecName.Name = "SpecName";
+            this.SpecName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Count
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N0";
+            this.Count.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Count.Frozen = true;
+            this.Count.HeaderText = "Численность";
+            this.Count.Name = "Count";
+            this.Count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // EcoCapacity
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "N0";
+            this.EcoCapacity.DefaultCellStyle = dataGridViewCellStyle3;
+            this.EcoCapacity.Frozen = true;
+            this.EcoCapacity.HeaderText = "Емкость среды";
+            this.EcoCapacity.Name = "EcoCapacity";
+            this.EcoCapacity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Birth
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N0";
+            this.Birth.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Birth.Frozen = true;
+            this.Birth.HeaderText = "Рождаемость";
+            this.Birth.Name = "Birth";
+            this.Birth.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Death
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "N0";
+            this.Death.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Death.Frozen = true;
+            this.Death.HeaderText = "Смертность";
+            this.Death.Name = "Death";
+            this.Death.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Death.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // InitWindow
             // 
@@ -177,7 +179,7 @@
         private System.Windows.Forms.Button AddRowBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SpecName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaxCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EcoCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Birth;
         private System.Windows.Forms.DataGridViewTextBoxColumn Death;
     }

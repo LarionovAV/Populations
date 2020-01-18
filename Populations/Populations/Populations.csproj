@@ -67,6 +67,7 @@
     <Compile Include="EcoSnapshot.cs" />
     <Compile Include="Ecosystem.cs" />
     <Compile Include="Interfaces\Impl\FixedItterationsRefresh.cs" />
+    <Compile Include="Limitations\InputLimitations.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

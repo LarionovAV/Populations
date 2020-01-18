@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Populations
+﻿namespace Populations
 {
     class FixedItterationsRefresh : IRefreshStrategy
     {
@@ -17,6 +11,9 @@ namespace Populations
         {
             for (int i = 0; i < itterCount; i++) {
                 Counter.GetInstance().Recount();
+                History.GetInstance().RenewData();
+                DrawSystem.GetInstance().Update();
+                DrawSystem.GetInstance().DoDraw();
             }
         }
 

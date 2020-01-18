@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Populations
@@ -23,21 +17,22 @@ namespace Populations
 
         private void MainWindow_Resize(object sender, EventArgs e)
         {
+            int WorkZoneHeight = Height - 40;
             ControlPanel.Width = Width * 30 / 100;
-            ControlPanel.Height = Height;
+            ControlPanel.Height = WorkZoneHeight;
             ControlPanel.Location = new Point(Width - ControlPanel.Width, 0);
 
             GraficChart.Width = Width * 70 / 100;
-            GraficChart.Height = Height / 2;
+            GraficChart.Height = WorkZoneHeight / 2;
             GraficChart.Location = new Point(0, 0);
 
             CircleChart.Width = Width * 35 / 100;
-            CircleChart.Height = Height / 2;
-            CircleChart.Location = new Point(Width * 35 / 100, Height / 2);
+            CircleChart.Height = WorkZoneHeight / 2;
+            CircleChart.Location = new Point(Width * 35 / 100, WorkZoneHeight / 2);
 
             HystoChart.Width = Width * 35 / 100;
-            HystoChart.Height = Height / 2;
-            HystoChart.Location = new Point(0, Height / 2);
+            HystoChart.Height = WorkZoneHeight / 2;
+            HystoChart.Location = new Point(0, WorkZoneHeight / 2);
 
             
             InitBtn.Location = new Point((InitBtn.Parent.Width - InitBtn.Width) / 2, 10);
@@ -78,11 +73,15 @@ namespace Populations
         private void TakeSnapshotBtn_Click(object sender, EventArgs e)
         {
             Facade.TakeSnapshot();
+            MessageField.Text = "Быстрый снимок создан. Всего снимков: " + History.GetInstance().GetSnapshotCount();
         }
 
         private void RestoreBtm_Click(object sender, EventArgs e)
         {
             Facade.Restore();
+            MessageField.Text = "Состояние восстановлено. Всего снимков: " + History.GetInstance().GetSnapshotCount();
         }
+
+
     }
 }

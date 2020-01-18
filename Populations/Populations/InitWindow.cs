@@ -20,17 +20,13 @@ namespace Populations
                         new Species(
                             row.Cells["SpecName"].Value.ToString(),
                             int.Parse(row.Cells["Count"].Value.ToString()),
-                            int.Parse(row.Cells["Birth"].Value.ToString()),
-                            int.Parse(row.Cells["Death"].Value.ToString()),
-                            int.Parse(row.Cells["MaxCount"].Value.ToString()))
+                            double.Parse(row.Cells["Birth"].Value.ToString()),
+                            double.Parse(row.Cells["Death"].Value.ToString()),
+                            int.Parse(row.Cells["EcoCapacity"].Value.ToString()))
                         );
                 }
             }
-            
-            InitWindow2 iw2 = new InitWindow2();
-            iw2.ShowDialog();
             Close();
-
             DrawSystem.GetInstance().Update();
         }
 

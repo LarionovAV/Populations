@@ -7,12 +7,12 @@ namespace Populations
     {
         public string       Name { get; set; }
         public int          Population { get; set; }
-        public int          NaturalBirth { get; set; }
-        public int          NaturalDeath { get; set; }
+        public double       NaturalBirth { get; set; }
+        public double       NaturalDeath { get; set; }
         public int          EcosystemCapacity { get; set; }
         public List<double> Relations { get; set; }
 
-        public Species(string name, int pop = 10, int birth = 5, int death = 3, int capacity = 1000) {
+        public Species(string name, int pop = 10, double birth = 5, double death = 3, int capacity = 1000) {
             Name = name;
             Population = pop;
             NaturalBirth = birth;

@@ -20,8 +20,6 @@ namespace Populations
 
         public void ExecuteRefresh() {
             refreshMode.Refresh();
-            History.GetInstance().RenewData();
-            DrawSystem.GetInstance().Update();
         }
         public void StopRefresh()
         {

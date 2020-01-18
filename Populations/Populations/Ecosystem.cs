@@ -40,6 +40,7 @@ namespace Populations
                     spec.Relations.Add(0);
                 }
                 History.GetInstance().AddDataSource(new List<int>());
+                History.GetInstance().Data[History.GetInstance().Data.Count - 1].Add(sp.Population);
             }
         }
         public void RemoveSpecies(int index) {

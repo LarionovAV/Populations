@@ -8,6 +8,7 @@ namespace Populations
         public SettingsWindow()
         {
             InitializeComponent();
+            ItterCountTextBox.KeyPress += new KeyPressEventHandler(Limitations.InputLimitations.IntegerNumberInput);
         }
 
 
@@ -39,7 +40,7 @@ namespace Populations
                 case "LogisticModel":
                     LogModelRB.Checked = true;
                     break;
-                case "N-SpaciesModel-General":
+                case "N_SpaciesModel_General":
                     NPopModelRB.Checked = true;
                     break;
             }
