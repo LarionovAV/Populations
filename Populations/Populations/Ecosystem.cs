@@ -16,15 +16,13 @@ namespace Populations
             else 
                 Species = new List<Species>();
         }
-        private bool HasSpecies(string spName) {
-            bool res = false;
+        private Species HasSpecies(string spName) {
             foreach (Species sp in Species) {
                 if (sp.Name == spName) {
-                    res = true;
-                    break;
+                    return sp;
                 }
             }
-            return res;
+            return null;
         }
 
         public static Ecosystem GetInstance(List<Species> spec = null) {
@@ -34,13 +32,22 @@ namespace Populations
             return instance;
         }
         public void AddSpecies(Species sp) {
-            if (!HasSpecies(sp.Name)) {
+            Species tmp = HasSpecies(sp.Name);
+            if (tmp == null)
+            {
                 Species.Add(sp);
-                foreach (Species spec in Species) {
+                foreach (Species spec in Species)
+                {
                     spec.Relations.Add(0);
                 }
                 History.GetInstance().AddDataSource(new List<int>());
                 History.GetInstance().Data[History.GetInstance().Data.Count - 1].Add(sp.Population);
+            }
+            else {
+                tmp.Population = sp.Population;
+                tmp.NaturalDeath = sp.NaturalDeath;
+                tmp.NaturalBirth = sp.NaturalBirth;
+                tmp.EcosystemCapacity = sp.EcosystemCapacity;
             }
         }
         public void RemoveSpecies(int index) {
