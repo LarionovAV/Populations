@@ -3,7 +3,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Populations
 {
-    class HystogramDrawer : ChartDrawer
+    public class HystogramDrawer : ChartDrawer
     {
         public HystogramDrawer(Chart chart) {
             Chart = chart;

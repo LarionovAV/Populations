@@ -3,7 +3,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Populations
 {
-    class DiagramDrawer : ChartDrawer
+    public class DiagramDrawer : ChartDrawer
     {
         public DiagramDrawer(Chart chart) {
             Chart = chart;

@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    class Memento
+    public class Memento
     {
         public static void Save() {
             History.GetInstance().Push(new EcoSnapshot());

@@ -3,7 +3,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Populations
 {
-    class DrawSystem
+    public class DrawSystem
     {
         public const int MAX_X_VALUE = 100;
 

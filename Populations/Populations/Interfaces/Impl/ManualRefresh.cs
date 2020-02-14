@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    class ManualRefresh : IRefreshStrategy
+    public class ManualRefresh : IRefreshStrategy
     {
         public void Refresh()
         {

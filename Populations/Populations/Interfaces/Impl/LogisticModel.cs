@@ -2,7 +2,7 @@
 
 namespace Populations
 {
-    class LogisticModel : IMathModel
+    public class LogisticModel : IMathModel
     {
         public void Recount()
         {

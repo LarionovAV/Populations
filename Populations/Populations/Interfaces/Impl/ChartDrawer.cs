@@ -2,7 +2,7 @@
 using System.Windows.Forms.DataVisualization.Charting;
 namespace Populations.Interfaces.Impl
 {
-    abstract class ChartDrawer : IDrawer
+    public abstract class ChartDrawer : IDrawer
     {
         protected Chart Chart { get; set; }
 

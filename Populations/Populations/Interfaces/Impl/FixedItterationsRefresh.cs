@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    class FixedItterationsRefresh : IRefreshStrategy
+    public class FixedItterationsRefresh : IRefreshStrategy
     {
         private readonly int itterCount;
 

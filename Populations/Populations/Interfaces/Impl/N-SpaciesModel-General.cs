@@ -2,7 +2,7 @@
 
 namespace Populations
 {
-    class N_SpaciesModel_General : IMathModel
+    public class N_SpaciesModel_General : IMathModel
     {
         private int[] oldPopulations;
         public void Recount()

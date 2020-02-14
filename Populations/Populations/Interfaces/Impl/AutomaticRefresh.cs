@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Populations
 {
-    class AutomaticRefresh : IRefreshStrategy
+    public class AutomaticRefresh : IRefreshStrategy
     {
         private static Timer timer = null;
 

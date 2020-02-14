@@ -2,7 +2,7 @@
 
 namespace Populations
 {
-    class Facade
+    public class Facade
     {
         public static void Init() {
             if (new InitWindow().ShowDialog() == DialogResult.OK) {

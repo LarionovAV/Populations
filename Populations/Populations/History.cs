@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Populations
 {
-    class History
+    public class History
     {
         public List<List<int>>          Data { get; }
         private Stack<EcoSnapshot>      snapshots;

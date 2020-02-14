@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Populations
 {
-    class Species : ICloneable
+    public class Species : ICloneable
     {
         public string       Name { get; set; }
         public int          Population { get; set; }

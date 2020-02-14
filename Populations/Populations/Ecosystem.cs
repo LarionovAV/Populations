@@ -2,7 +2,7 @@
 
 namespace Populations
 {
-    class Ecosystem
+    public class Ecosystem
     {
         public List<Species>            Species     { get; private set; }
         private static Ecosystem        instance    = null;

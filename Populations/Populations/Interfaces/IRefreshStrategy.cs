@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    interface IRefreshStrategy
+    public interface IRefreshStrategy
     {
         void Refresh();
         void Stop();

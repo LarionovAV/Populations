@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    interface IMathModel
+    public interface IMathModel
     {
         void Recount();
     }

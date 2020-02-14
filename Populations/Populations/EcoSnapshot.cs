@@ -2,7 +2,7 @@
 
 namespace Populations
 {
-    class EcoSnapshot
+    public class EcoSnapshot
     {
         public List<Species>      Spec { get; set; }
 

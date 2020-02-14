@@ -2,7 +2,7 @@
 
 namespace Populations
 {
-    class Counter
+    public class Counter
     {
         private IMathModel          math;
         private static Counter      instance = null;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Populations
 {
-    class SystemController
+    public class SystemController
     {
         private static SystemController                instance = null;
         private IRefreshStrategy                       refreshMode;

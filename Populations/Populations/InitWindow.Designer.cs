@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    partial class InitWindow
+    public partial class InitWindow
     {
         /// <summary>
         /// Required designer variable.

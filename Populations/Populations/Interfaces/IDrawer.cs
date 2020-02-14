@@ -1,6 +1,6 @@
 ﻿namespace Populations
 {
-    interface IDrawer
+    public interface IDrawer
     {
         void Draw();
         void Update();
