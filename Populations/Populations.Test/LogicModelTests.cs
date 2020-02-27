@@ -45,6 +45,7 @@ namespace Populations.Test
             Assert.AreEqual(rabbitExpectedPopulation, rabbit.Population);
 
             Ecosystem.GetInstance().Species.Clear();
+            History.GetInstance().Data.Clear();
         }
 
         [TestMethod]
@@ -67,6 +68,7 @@ namespace Populations.Test
             Assert.AreEqual(expectedpopulation, fox.Population);
 
             Ecosystem.GetInstance().Species.Clear();
+            History.GetInstance().Data.Clear();
         }
 
         [TestMethod]
@@ -89,6 +91,7 @@ namespace Populations.Test
             Assert.AreEqual(expectedpopulation, fox.Population);
 
             Ecosystem.GetInstance().Species.Clear();
+            History.GetInstance().Data.Clear();
         }
 
         [TestMethod]
@@ -111,6 +114,7 @@ namespace Populations.Test
             Assert.AreEqual(expectedpopulation, fox.Population);
 
             Ecosystem.GetInstance().Species.Clear();
+            History.GetInstance().Data.Clear();
         }
 
         
