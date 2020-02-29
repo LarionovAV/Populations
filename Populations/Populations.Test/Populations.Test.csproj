@@ -49,10 +49,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FacadeTests.cs" />
     <Compile Include="LogicModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SnapshotTests.cs" />
     <Compile Include="StrategyTests.cs" />
+    <Compile Include="SystemControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
